@@ -4,56 +4,29 @@
             <v-col cols="12" sm="8" md="4" xl="3">
                 <div class="blue lighten-5 pb-2">
                     <div class="text-center mb-4">
-                        <img
-                            align="middle"
-                            src="/images/logo.png"
-                            height="62"
-                        />
+                        <img align="middle" src="/images/logo.png" height="62" />
                     </div>
-                    <p class="itb-slogan text-center m-0">MEASURE YOUR WORK</p>
+                    <p class="itb-slogan text-center m-0">Prueba Técnica</p>
                 </div>
-                <v-card
-                    class="elevation-12"
-                    :loading="loading"
-                    :disabled="loading"
-                >
+                <v-card class="elevation-12" :loading="loading" :disabled="loading">
                     <v-form ref="form" v-model="valid">
                         <v-toolbar color="primary" dark flat>
                             <v-toolbar-title>{{
                                 $t("title.login")
-                            }}</v-toolbar-title>
+                                }}</v-toolbar-title>
                         </v-toolbar>
                         <v-card-text>
-                            <v-text-field
-                                v-model="user.email"
-                                :label="$t('general.e_mail')"
-                                placeholder="..."
-                                name="email"
-                                prepend-icon="mdi-account"
-                                type="text"
-                                :rules="emailRules"
-                                required
-                            ></v-text-field>
-                            <v-text-field
-                                v-model="user.password"
-                                :label="$t('general.password')"
-                                placeholder="..."
-                                name="password"
-                                prepend-icon="mdi-lock"
-                                type="password"
-                                :rules="[(v) => !!v || $t('general.required')]"
-                                required
-                            ></v-text-field>
+                            <v-text-field v-model="user.email" :label="$t('general.e_mail')" placeholder="..."
+                                name="email" prepend-icon="mdi-account" type="text" :rules="emailRules"
+                                required></v-text-field>
+                            <v-text-field v-model="user.password" :label="$t('general.password')" placeholder="..."
+                                name="password" prepend-icon="mdi-lock" type="password"
+                                :rules="[(v) => !!v || $t('general.required')]" required></v-text-field>
                         </v-card-text>
                         <v-card-actions>
                             <v-spacer></v-spacer>
-                            <v-btn
-                                color="primary"
-                                @click="validateAndLogin"
-                                :loading="loading"
-                                class="mr-2"
-                                >{{ $t("general.login") }}</v-btn
-                            >
+                            <v-btn color="primary" @click="validateAndLogin" :loading="loading" class="mr-2">{{
+                                $t("general.login") }}</v-btn>
                         </v-card-actions>
                     </v-form>
                 </v-card>
